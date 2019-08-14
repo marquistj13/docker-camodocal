@@ -58,6 +58,6 @@ RUN /bin/bash -c ". $HOME/make_opencv_camodocal.sh"
 # libdc1394 does not work in Docker, so disable it (we anyways don't need it in here)
 RUN ln /dev/null /dev/raw1394 && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get remove -q -y libgtk2.0-dev
 #Manual fix to prevent GTK errors
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -q -y --no-install-recommends libgtk2.0-dev
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -q -y --no-install-recommends libgtk2.0-dev libcanberra-gtk-module libcanberra-gtk3-module
 
 
