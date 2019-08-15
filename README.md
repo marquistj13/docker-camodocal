@@ -27,7 +27,7 @@ docker build camodocal:1.0 .
 ```
 
 ## Usage
-First, we should enable docker to use GUI. You only need to run the following command (only once) in your local host's terminal:
+First, we should enable docker to use GUI. You only need to run the following command in your local host's terminal:
 ```
 xhost +local:docker
 ```
@@ -65,6 +65,11 @@ Now you are in the docker container, you can then run the following command to t
 ```
 cd camodocal/
 intrinsic_calib -i data/images/ -p img --camera-model mei
+```
+
+In my own case, I record some images and run:
+```
+intrinsic_calib -w 9 -h 7 -s 100 -i cam_right/ -p img --camera-model kannala-brandt
 ```
 
 Note that your local host's home directory is now mapped to the docker container's `/data` directory, so you can easily access your local host's files.
